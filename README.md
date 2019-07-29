@@ -1,7 +1,7 @@
 # Getter-benchmark
 
 ```shell
-$ go test -bench=. .
+$ go test -bench=. -benchmem .
 goos: darwin
 goarch: amd64
 pkg: github.com/squaresun/getter-benchmark
