@@ -1,9 +1,6 @@
-package test
+package benchmark
 
 import (
-	"fmt"
-
-	"github.com/bxcodec/faker"
 	echo_struct "github.com/squaresun/getter-benchmark/echo/struct"
 )
 
@@ -27,11 +24,7 @@ type SomeStruct struct {
 }
 
 func serveStruct() {
-	a := SomeStruct{}
-	err := faker.FakeData(&a)
-	if err != nil {
-		fmt.Println(err)
-	}
+	a := fake
 	echo_struct.Echo(echo_struct.SomeStruct{
 		Int:      a.Int,
 		Int8:     a.Int8,
