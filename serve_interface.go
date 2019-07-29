@@ -1,6 +1,9 @@
 package benchmark
 
 import (
+	"fmt"
+
+	"github.com/bxcodec/faker"
 	echo_interface "github.com/squaresun/getter-benchmark/echo/interface"
 )
 
@@ -54,6 +57,10 @@ func (s SomeStruct) GetSBool() []bool {
 }
 
 func serveInterface() {
-	a := fake
+	var a SomeStruct
+	err := faker.FakeData(&a)
+	if err != nil {
+		fmt.Println(err)
+	}
 	echo_interface.Echo(a)
 }
